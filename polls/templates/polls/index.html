@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Poll app</title>
+</head>
+<body>
+	<h2>Poll app on django framework</h2>
+	{%if latest_poll_list%}
+		<ul>
+			{%for poll in latest_poll_list%}
+				<li><a href="{% url 'polls:detail' poll.id %}">{{poll.question}}</a></li>
+			{%endfor %}
+		</ul>
+	{%else%}
+		<p>No polls availabel</p>
+	{%endif%}
+</body>
+</html>
